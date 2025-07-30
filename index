@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlantic Beach Real Estate - Joe Joseph</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      background-color: #111;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #d6001c;
+    }
+    header img {
+      height: 40px;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://via.placeholder.com/1600x500?text=Atlantic+Beach+Real+Estate') center/cover no-repeat;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      color: #fff;
+      background-color: rgba(0,0,0,0.6);
+      display: inline-block;
+      padding: 10px 20px;
+    }
+    .hero button {
+      background-color: #d6001c;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 5px;
+      border: 2px solid #d6001c;
+    }
+    form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 3px;
+    }
+    select, input {
+      background-color: #222;
+      color: #fff;
+    }
+    button.submit-btn {
+      width: 100%;
+      padding: 15px;
+      margin-top: 20px;
+      background-color: #d6001c;
+      color: #fff;
+      font-size: 1.2em;
+      border: none;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://via.placeholder.com/150x40?text=KW+Atlantic+Partners" alt="KW Atlantic Partners" />
+    <a href="tel:7246992954">Call 724-699-2954</a>
+  </header>
+
+  <section class="hero">
+    <h1>Find Your Atlantic Beach Dream Home — or Sell for Top Dollar</h1><br>
+    <button onclick="document.getElementById('leadForm').scrollIntoView({behavior:'smooth'});">Start My Home Match</button>
+  </section>
+
+  <form id="leadForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <h2>Get Started</h2>
+
+    <label>Are you looking to:</label>
+    <select name="lead_type" id="leadType" required>
+      <option value="">-- Select One --</option>
+      <option value="buyer">Buy a home</option>
+      <option value="seller">Sell a home</option>
+    </select>
+
+    <!-- Buyer Questions -->
+    <div id="buyerQuestions" class="hidden">
+      <label>Are you currently working with an agent?</label>
+      <select name="buyer_agent">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label>What's your price range?</label>
+      <select name="buyer_price_range">
+        <option value="<400k">Under $400k</option>
+        <option value="400-600k">$400–600k</option>
+        <option value="600-800k">$600–800k</option>
+        <option value="800k-1m">$800k–$1M</option>
+        <option value=">1m">Over $1M</option>
+      </select>
+
+      <label>When are you looking to move?</label>
+      <select name="buyer_timeline">
+        <option value="0-3mo">0–3 months</option>
+        <option value="3-6mo">3–6 months</option>
+        <option value="6-12mo">6–12 months</option>
+        <option value=">12mo">12+ months</option>
+      </select>
+
+      <label>Do you need financing pre-approval?</label>
+      <select name="buyer_financing">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="Pre-approved">Already Pre-Approved</option>
+      </select>
+
+      <label>What type of property are you looking for?</label>
+      <select name="buyer_property_type">
+        <option value="Single-family">Single-family</option>
+        <option value="Condo">Condo</option>
+        <option value="Townhome">Townhome</option>
+        <option value="Vacant land">Vacant Land</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label>Which areas are you most interested in?</label>
+      <input type="text" name="buyer_areas" placeholder="Atlantic Beach, Neptune Beach, etc." />
+    </div>
+
+    <!-- Seller Questions -->
+    <div id="sellerQuestions" class="hidden">
+      <label>Have you sold a home before?</label>
+      <select name="seller_experience">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label>Estimated home value?</label>
+      <select name="seller_value">
+        <option value="<400k">Under $400k</option>
+        <option value="400-600k">$400–600k</option>
+        <option value="600-800k">$600–800k</option>
+        <option value="800k-1m">$800k–$1M</option>
+        <option value=">1m">Over $1M</option>
+      </select>
+
+      <label>When do you plan to sell?</label>
+      <select name="seller_timeline">
+        <option value="0-3mo">0–3 months</option>
+        <option value="3-6mo">3–6 months</option>
+        <option value="6-12mo">6–12 months</option>
+        <option value=">12mo">12+ months</option>
+      </select>
+
+      <label>Do you already have your next home lined up?</label>
+      <select name="seller_next_home">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label>What's your biggest reason for selling?</label>
+      <select name="seller_reason">
+        <option value="Upgrade">Upgrade</option>
+        <option value="Downsize">Downsize</option>
+        <option value="Relocation">Relocation</option>
+        <option value="Investment">Investment</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label>Would you like a free professional home valuation report?</label>
+      <select name="seller_valuation">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+
+    <!-- Contact Info -->
+    <label>Full Name</label>
+    <input type="text" name="name" required />
+
+    <label>Email Address</label>
+    <input type="email" name="email" required />
+
+    <label>Phone Number</label>
+    <input type="tel" name="phone" required />
+
+    <label>Preferred Contact Method</label>
+    <select name="contact_method">
+      <option value="Call">Call</option>
+      <option value="Text">Text</option>
+      <option value="Email">Email</option>
+    </select>
+
+    <button type="submit" class="submit-btn">Get My Results</button>
+  </form>
+
+  <script>
+    const leadTypeSelect = document.getElementById('leadType');
+    const buyerQ = document.getElementById('buyerQuestions');
+    const sellerQ = document.getElementById('sellerQuestions');
+
+    leadTypeSelect.addEventListener('change', function() {
+      if (this.value === 'buyer') {
+        buyerQ.classList.remove('hidden');
+        sellerQ.classList.add('hidden');
+      } else if (this.value === 'seller') {
+        sellerQ.classList.remove('hidden');
+        buyerQ.classList.add('hidden');
+      } else {
+        buyerQ.classList.add('hidden');
+        sellerQ.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
